@@ -9,24 +9,24 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Locomotive & GSAP for smooth scrolling and animations -->
+  <!-- Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body id="mainBody" data-scroll-container>
-  <!-- 🔝 Navbar -->
+  <!-- 🌐 Navbar -->
   <header class="navbar">
     <img class="animated-icon" src="assets/images/animated-icon.gif" alt="Quizify Logo" />
     <span class="brand">Quizify</span>
-    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark">🌗</button>
   </header>
 
-  <!-- 🔷 Background SVG -->
+  <!-- 🌀 Background SVG -->
   <img class="background-svg" src="assets/images/background.svg" alt="Background SVG" />
 
-  <!-- 🚀 Hero Section -->
+  <!-- 🔥 Hero Section -->
   <div class="hero-section" data-scroll-section>
     <video class="background-video" autoplay muted loop>
       <source src="assets/videos/showcase-work.mp4" type="video/mp4" />
@@ -39,7 +39,7 @@
     <div class="ripple-bg"></div>
   </div>
 
-  <!-- 💡 Features Section -->
+  <!-- 🌟 Core Features -->
   <section class="features" data-scroll-section>
     <h2 data-scroll>Our Core Features</h2>
     <div class="feature-cards">
@@ -47,6 +47,30 @@
       <div class="card" data-scroll data-scroll-speed="1.2">🧠 AI-Personalized</div>
       <div class="card" data-scroll data-scroll-speed="0.8">👥 Team Battles</div>
       <div class="card" data-scroll data-scroll-speed="1">📈 Realtime Analytics</div>
+    </div>
+  </section>
+
+  <!-- 🎥 Stats Section -->
+  <section class="stats-section ripple" data-scroll-section>
+    <video class="stats-bg-video" autoplay muted loop>
+      <source src="assets/videos/bg2.mp4" type="video/mp4" />
+    </video>
+    <div class="stats-overlay">
+      <h2>Impact in Numbers</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>1000</h3>
+          <p>Quizzes Played</p>
+        </div>
+        <div class="stat">
+          <h3>500</h3>
+          <p>Teams Joined</p>
+        </div>
+        <div class="stat">
+          <h3>12000</h3>
+          <p>Active Users</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -60,15 +84,15 @@
     </div>
   </section>
 
-  <!-- 🎥 Lottie Animation (MP4) -->
+  <!-- 🎞️ Lottie Section -->
   <section class="lottie-animation" data-scroll-section>
     <h2>Why Quizify?</h2>
     <video autoplay muted loop>
-      <source src="assets/lottie/lottie.mp4" type="video/mp4" />
+      <source src="assets/videos/lottie.mp4" type="video/mp4" />
     </video>
   </section>
 
-  <!-- 🌟 Showcase Section -->
+  <!-- 🎬 Showcase Section -->
   <section class="showcase" data-scroll-section>
     <h2>Showcase</h2>
     <video autoplay muted loop>
@@ -85,22 +109,22 @@
     </div>
   </section>
 
-  <!-- 🔚 Final CTA -->
+  <!-- 🟢 Final CTA -->
   <section class="cta-final" data-scroll-section>
     <h2 data-scroll data-scroll-speed="1">Ready to Elevate Learning?</h2>
     <button class="cta">Get Started</button>
   </section>
 
-  <!-- 👣 Footer -->
+  <!-- 🦶 Footer -->
   <footer data-scroll-section>
     <p>&copy; 2025 Quizify Inc. All rights reserved.</p>
   </footer>
 
-  <!-- 🔊 Audio Files -->
+  <!-- 🔊 Sound Effects -->
   <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
   <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
 
-  <!-- 📜 Scripts -->
+  <!-- 📜 JS -->
   <script src="script.js"></script>
 </body>
 </html>
