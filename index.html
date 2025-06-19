@@ -1,0 +1,91 @@
+<!-- Full HTML structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizify - Elevate Your Mind</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+</head>
+<body data-scroll-container>
+ <header class="navbar">
+    <img class="animated-icon" src="assets/images/animated-icon.gif" alt="Quizify Logo" />
+    <span class="brand">Quizify</span>
+  </header>
+
+  <img class="background-svg" src="assets/images/background.svg" alt="Background SVG" />
+
+  <div class="hero-section" data-scroll-section>
+    <video class="background-video" autoplay muted loop>
+      <source src="showcase work.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1 data-scroll data-scroll-speed="2">Quizify</h1>
+      <p data-scroll data-scroll-speed="1">Power Up Learning with Play</p>
+      <button class="cta">Start Now</button>
+    </div>
+    <div class="ripple-bg"></div>
+  </div>
+
+  <section class="features" data-scroll-section>
+    <h2 data-scroll>Our Core Features</h2>
+    <div class="feature-cards">
+      <div class="card" data-scroll data-scroll-speed="1.5">⚡ Gamified Quizzes</div>
+      <div class="card" data-scroll data-scroll-speed="1.2">🧠 AI-Personalized</div>
+      <div class="card" data-scroll data-scroll-speed="0.8">👥 Team Battles</div>
+      <div class="card" data-scroll data-scroll-speed="1">📈 Realtime Analytics</div>
+    </div>
+  </section>
+
+  <section class="carousel-section" data-scroll-section>
+    <h2>Quiz Experiences</h2>
+    <div class="carousel">
+      <div class="carousel-item active">Live Competitions</div>
+      <div class="carousel-item">Training Simulators</div>
+      <div class="carousel-item">Hackathons</div>
+    </div>
+  </section>
+
+  <section class="lottie-animation" data-scroll-section>
+    <h2>Why Quizify?</h2>
+    <video autoplay muted loop>
+      <source src="assets/lottie/lottie.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <section class="showcase" data-scroll-section>
+    <h2>Showcase</h2>
+    <video autoplay muted loop>
+      <source src="showcase work.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <section class="testimonials" data-scroll-section>
+    <h2>Trusted by Teams</h2>
+    <div class="testimonial">
+      <p>“Absolutely revolutionary experience — made onboarding a joy.”</p>
+      <span>– CTO, The Agency</span>
+    </div>
+  </section>
+
+  <section class="cta-final" data-scroll-section>
+    <h2 data-scroll data-scroll-speed="1">Ready to Elevate Learning?</h2>
+    <button class="cta">Get Started</button>
+  </section>
+
+  <footer data-scroll-section>
+    <p>&copy; 2025 Quizify Inc. All rights reserved.</p>
+  </footer>
+
+  <!-- 🔊 Hover Sounds -->
+  <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
+  <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
