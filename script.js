@@ -1,23 +1,43 @@
 // 🚀 Locomotive Scroll Init
+const scrollContainer = document.querySelector("[data-scroll-container]");
 const scroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
+  el: scrollContainer,
   smooth: true
 });
 
+// 🔄 Sync GSAP ScrollTrigger with Locomotive Scroll
+gsap.registerPlugin(ScrollTrigger);
+scroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(scrollContainer, {
+  scrollTop(value) {
+    return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: scrollContainer.style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => scroll.update());
+ScrollTrigger.refresh();
+
 // 🎯 Carousel Logic
-let items = document.querySelectorAll('.carousel-item');
+const items = document.querySelectorAll('.carousel-item');
 let current = 0;
+
 setInterval(() => {
   items[current].classList.remove('active');
   current = (current + 1) % items.length;
   items[current].classList.add('active');
 }, 3000);
 
-// 🎬 GSAP Animations
+// 🎬 GSAP Entry Animations
 items.forEach((el, i) => {
   gsap.from(el, {
     scrollTrigger: {
       trigger: el,
+      scroller: scrollContainer,
       start: 'top 80%',
     },
     opacity: 0,
@@ -27,22 +47,33 @@ items.forEach((el, i) => {
   });
 });
 
-// 🔊 Hover Sounds
+// 🔊 Hover Sounds Setup
 const hoverSound = document.getElementById("hover-sound");
 const cardHoverSound = document.getElementById("card-hover-sound");
-hoverSound.volume = 0.3;
-cardHoverSound.volume = 0.3;
 
-document.querySelectorAll('.cta, .carousel-item').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-  });
-});
+if (hoverSound && cardHoverSound) {
+  hoverSound.volume = 0.3;
+  cardHoverSound.volume = 0.3;
 
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    cardHoverSound.currentTime = 0;
-    cardHoverSound.play();
+  document.querySelectorAll('.cta, .carousel-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      try {
+        hoverSound.currentTime = 0;
+        hoverSound.play();
+      } catch (err) {
+        console.warn("Hover sound couldn't play:", err);
+      }
+    });
   });
-});
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      try {
+        cardHoverSound.currentTime = 0;
+        cardHoverSound.play();
+      } catch (err) {
+        console.warn("Card hover sound couldn't play:", err);
+      }
+    });
+  });
+}
