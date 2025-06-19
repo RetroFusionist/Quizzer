@@ -150,6 +150,21 @@ document.querySelectorAll('.stat h3').forEach(el => {
     }
   });
 });
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.getElementById("mainBody");
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("light-theme");
+  localStorage.setItem("theme", body.classList.contains("light-theme") ? "light" : "dark");
+});
+
+// Load saved theme on reload
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    body.classList.add("light-theme");
+  }
+});
 
 
 
