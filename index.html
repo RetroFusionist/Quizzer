@@ -5,27 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quizify - Elevate Your Mind</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Libraries -->
+  <!-- Locomotive & GSAP for smooth scrolling and animations -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 </head>
 
-<body data-scroll-container>
-
-  <!-- 🔸 Navbar -->
+<body id="mainBody" data-scroll-container>
+  <!-- 🔝 Navbar -->
   <header class="navbar">
     <img class="animated-icon" src="assets/images/animated-icon.gif" alt="Quizify Logo" />
     <span class="brand">Quizify</span>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
   </header>
 
-  <!-- 🔹 Background SVG -->
+  <!-- 🔷 Background SVG -->
   <img class="background-svg" src="assets/images/background.svg" alt="Background SVG" />
 
-  <!-- 🎬 Hero Section -->
+  <!-- 🚀 Hero Section -->
   <div class="hero-section" data-scroll-section>
     <video class="background-video" autoplay muted loop>
       <source src="assets/videos/showcase-work.mp4" type="video/mp4" />
@@ -38,7 +39,7 @@
     <div class="ripple-bg"></div>
   </div>
 
-  <!-- ⚡ Features -->
+  <!-- 💡 Features Section -->
   <section class="features" data-scroll-section>
     <h2 data-scroll>Our Core Features</h2>
     <div class="feature-cards">
@@ -59,7 +60,7 @@
     </div>
   </section>
 
-  <!-- 🔄 Lottie Section -->
+  <!-- 🎥 Lottie Animation (MP4) -->
   <section class="lottie-animation" data-scroll-section>
     <h2>Why Quizify?</h2>
     <video autoplay muted loop>
@@ -67,7 +68,7 @@
     </video>
   </section>
 
-  <!-- 🚀 Showcase Section -->
+  <!-- 🌟 Showcase Section -->
   <section class="showcase" data-scroll-section>
     <h2>Showcase</h2>
     <video autoplay muted loop>
@@ -75,7 +76,7 @@
     </video>
   </section>
 
-  <!-- 🗣️ Testimonials -->
+  <!-- 💬 Testimonials -->
   <section class="testimonials" data-scroll-section>
     <h2>Trusted by Teams</h2>
     <div class="testimonial">
@@ -84,21 +85,22 @@
     </div>
   </section>
 
-  <!-- 🎯 Final CTA -->
+  <!-- 🔚 Final CTA -->
   <section class="cta-final" data-scroll-section>
     <h2 data-scroll data-scroll-speed="1">Ready to Elevate Learning?</h2>
     <button class="cta">Get Started</button>
   </section>
 
-  <!-- 📎 Footer -->
+  <!-- 👣 Footer -->
   <footer data-scroll-section>
     <p>&copy; 2025 Quizify Inc. All rights reserved.</p>
   </footer>
 
-  <!-- 🔊 Sound Effects -->
+  <!-- 🔊 Audio Files -->
   <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
   <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
 
+  <!-- 📜 Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
