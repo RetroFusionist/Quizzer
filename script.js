@@ -1,14 +1,9 @@
-// 🚀 Locomotive Scroll Init
+// 🚀 Locomotive Scroll
 const scrollContainer = document.querySelector("[data-scroll-container]");
-const scroll = new LocomotiveScroll({
-  el: scrollContainer,
-  smooth: true
-});
+const scroll = new LocomotiveScroll({ el: scrollContainer, smooth: true });
 
-// 🔄 Sync GSAP ScrollTrigger with Locomotive Scroll
 gsap.registerPlugin(ScrollTrigger);
 scroll.on("scroll", ScrollTrigger.update);
-
 ScrollTrigger.scrollerProxy(scrollContainer, {
   scrollTop(value) {
     return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
@@ -18,93 +13,69 @@ ScrollTrigger.scrollerProxy(scrollContainer, {
   },
   pinType: scrollContainer.style.transform ? "transform" : "fixed"
 });
-
 ScrollTrigger.addEventListener("refresh", () => scroll.update());
 ScrollTrigger.refresh();
 
-// 🎯 Carousel Logic
+// 🎯 Carousel
 const items = document.querySelectorAll('.carousel-item');
 let current = 0;
-
 setInterval(() => {
   items[current].classList.remove('active');
   current = (current + 1) % items.length;
   items[current].classList.add('active');
 }, 3000);
 
-// 🎬 GSAP Entry Animations
-items.forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      scroller: scrollContainer,
-      start: 'top 80%',
-    },
-    opacity: 0,
-    y: 50,
-    duration: 0.6,
-    delay: i * 0.2
-  });
+// 🖼️ Scroll-triggered Image Shrink
+const shrinkImgs = document.querySelectorAll(".scroll-shrink");
+ScrollTrigger.batch(shrinkImgs, {
+  onEnter: batch => batch.forEach(img => img.classList.add("shrunk")),
+  onLeaveBack: batch => batch.forEach(img => img.classList.remove("shrunk")),
+  start: "top center",
+  end: "bottom center",
+  scroller: scrollContainer
 });
 
-// 🔊 Hover Sounds Setup
+// 🔊 Hover Sounds
 const hoverSound = document.getElementById("hover-sound");
 const cardHoverSound = document.getElementById("card-hover-sound");
-
 if (hoverSound && cardHoverSound) {
   hoverSound.volume = 0.3;
   cardHoverSound.volume = 0.3;
-
   document.querySelectorAll('.cta, .carousel-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
       try {
         hoverSound.currentTime = 0;
         hoverSound.play();
-      } catch (err) {
-        console.warn("Hover sound couldn't play:", err);
-      }
+      } catch (err) {}
     });
   });
-
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
       try {
         cardHoverSound.currentTime = 0;
         cardHoverSound.play();
-      } catch (err) {
-        console.warn("Card hover sound couldn't play:", err);
-      }
+      } catch (err) {}
     });
   });
 }
+
 // 🌓 Theme Toggle
 const toggleBtn = document.getElementById("themeToggle");
 const body = document.getElementById("mainBody");
-
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("light-theme");
-
-  // Optionally save theme preference in localStorage
-  if (body.classList.contains("light-theme")) {
-    localStorage.setItem("theme", "light");
-  } else {
-    localStorage.setItem("theme", "dark");
-  }
+  localStorage.setItem("theme", body.classList.contains("light-theme") ? "light" : "dark");
 });
-
-// On load: apply saved theme
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
+  if (localStorage.getItem("theme") === "light") {
     body.classList.add("light-theme");
   }
 });
 
-// 🔢 Animate Stats on Scroll
+// 🔢 Animate Stats
 document.querySelectorAll('.stat h3').forEach(el => {
   let count = 0;
   const target = parseInt(el.textContent.replace(/\D/g, '')) || 0;
-
   ScrollTrigger.create({
     trigger: el,
     start: "top 90%",
