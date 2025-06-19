@@ -77,3 +77,26 @@ if (hoverSound && cardHoverSound) {
     });
   });
 }
+// 🌓 Theme Toggle
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.getElementById("mainBody");
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("light-theme");
+
+  // Optionally save theme preference in localStorage
+  if (body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// On load: apply saved theme
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    body.classList.add("light-theme");
+  }
+});
+
