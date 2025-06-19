@@ -100,3 +100,25 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// 🔢 Animate Stats on Scroll
+document.querySelectorAll('.stat h3').forEach(el => {
+  let count = 0;
+  const target = parseInt(el.textContent.replace(/\D/g, '')) || 0;
+
+  ScrollTrigger.create({
+    trigger: el,
+    start: "top 90%",
+    once: true,
+    onEnter: () => {
+      const increment = target / 100;
+      const interval = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          count = target;
+          clearInterval(interval);
+        }
+        el.textContent = target >= 1000 ? Math.floor(count).toLocaleString() + "+" : Math.floor(count);
+      }, 20);
+    }
+  });
+});
