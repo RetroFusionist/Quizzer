@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quizify - Elevate Your Mind</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet"/>
+
+  <!-- Scroll & Animation Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
@@ -18,7 +22,7 @@
   </div>
 
   <!-- 🟣 Scroll Progress Bar -->
-  <div id="progress-bar"></div>
+  <div id="progress-bar" class="progress-bar"></div>
 
   <!-- 🔝 Navbar -->
   <header class="navbar">
@@ -27,7 +31,6 @@
     <button id="themeToggle" class="theme-toggle">🌓</button>
   </header>
 
-  
   <!-- 🚀 Hero Section -->
   <div class="hero-section" data-scroll-section>
     <video class="background-video" autoplay muted loop>
@@ -44,8 +47,8 @@
   <!-- 🎯 Interactive Image Section -->
   <section class="interactive-images" data-scroll-section>
     <div class="parallax-container">
-      <img src="assets/images/hover-img1.png" class="parallax-img" />
-      <img src="assets/images/hover-img2.png" class="parallax-img" />
+      <img src="assets/images/hover-img1.jpg" class="parallax-img" alt="Interactive 1" />
+      <img src="assets/images/hover-img2.jpg" class="parallax-img" alt="Interactive 2" />
     </div>
   </section>
 
