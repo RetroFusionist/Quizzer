@@ -13,24 +13,21 @@
 <body id="mainBody" data-scroll-container>
 
   <!-- 🔄 Loading Spinner -->
-  <div id="preloader"><div class="spinner"></div></div>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
   <!-- 🟣 Scroll Progress Bar -->
-  <div class="progress-bar" id="progress-bar"></div>
+  <div id="progress-bar"></div>
 
   <!-- 🔝 Navbar -->
   <header class="navbar">
     <img class="animated-icon" src="assets/images/animated-icon.gif" alt="Quizify Logo" />
     <span class="brand">Quizify</span>
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
     <button id="themeToggle" class="theme-toggle">🌓</button>
   </header>
 
-  <!-- 🌊 Background SVG -->
+  <!-- 🌊 Background Wave -->
   <img class="background-svg" src="assets/images/background.svg" alt="Background SVG" />
 
   <!-- 🚀 Hero Section -->
@@ -43,29 +40,30 @@
       <p data-scroll data-scroll-speed="1">Power Up Learning with Play</p>
       <button class="cta">Start Now</button>
     </div>
+    <div class="ripple-bg"></div>
   </div>
 
-  <!-- 🌀 Parallax Image Section -->
+  <!-- 🎯 Interactive Image Section -->
   <section class="interactive-images" data-scroll-section>
     <div class="parallax-container">
-      <img src="assets/images/hover-img1.jpg" class="parallax-img" />
-      <img src="assets/images/hover-img2.jpg" class="parallax-img" />
+      <img src="assets/images/hover-img1.png" class="parallax-img" />
+      <img src="assets/images/hover-img2.png" class="parallax-img" />
     </div>
   </section>
 
-  <!-- ⚡ Features -->
-  <section id="features" class="features" data-scroll-section>
+  <!-- ⚡ Features Section -->
+  <section class="features" data-scroll-section>
     <h2 data-scroll>Our Core Features</h2>
     <div class="feature-cards">
-      <div class="card">⚡ Gamified Quizzes</div>
-      <div class="card">🧠 AI-Personalized</div>
-      <div class="card">👥 Team Battles</div>
-      <div class="card">📈 Realtime Analytics</div>
+      <div class="card" data-scroll data-scroll-speed="1.5">⚡ Gamified Quizzes</div>
+      <div class="card" data-scroll data-scroll-speed="1.2">🧠 AI-Personalized</div>
+      <div class="card" data-scroll data-scroll-speed="0.8">👥 Team Battles</div>
+      <div class="card" data-scroll data-scroll-speed="1">📈 Realtime Analytics</div>
     </div>
   </section>
 
-  <!-- 📊 Stats -->
-  <section id="stats" class="stats-section ripple" data-scroll-section>
+  <!-- 📊 Stats Section -->
+  <section class="stats-section ripple" data-scroll-section>
     <video class="stats-bg-video" autoplay muted loop>
       <source src="assets/videos/bg2.mp4" type="video/mp4" />
     </video>
@@ -95,7 +93,7 @@
   </section>
 
   <!-- 📞 Footer -->
-  <footer id="contact" data-scroll-section>
+  <footer data-scroll-section>
     <p>&copy; 2025 Quizify Inc. All rights reserved.</p>
   </footer>
 
@@ -103,7 +101,7 @@
   <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
   <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
 
-  <!-- 📜 Script -->
+  <!-- 🧠 Script -->
   <script src="script.js"></script>
 </body>
 </html>
