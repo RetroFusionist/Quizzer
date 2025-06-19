@@ -1,10 +1,9 @@
-
-  // 🌐 Scroll Progress Bar
+// 🌐 Scroll Progress Bar
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
   const progress = (scrollTop / docHeight) * 100;
-  document.querySelector(".progress-bar").style.width = ${progress}%;
+  document.querySelector(".progress-bar").style.width = `${progress}%`;
 });
 
 // ⏳ Spinner Loader
@@ -19,7 +18,7 @@ window.addEventListener("scroll", () => {
   const scrollPos = window.scrollY;
   shrinkImgs.forEach(img => {
     const scale = Math.max(0.6, 1 - scrollPos / 1000);
-    img.style.transform = scale(${scale});
+    img.style.transform = `scale(${scale})`;
   });
 });
 
@@ -28,7 +27,7 @@ window.addEventListener("scroll", () => {
   const offset = window.scrollY;
   const parallaxImg = document.querySelector(".parallax-img");
   if (parallaxImg) {
-    parallaxImg.style.transform = translateY(${offset * 0.3}px);
+    parallaxImg.style.transform = `translateY(${offset * 0.3}px)`;
   }
 });
 
@@ -149,21 +148,6 @@ document.querySelectorAll('.stat h3').forEach(el => {
       }, 20);
     }
   });
-});
-const toggleBtn = document.getElementById("themeToggle");
-const body = document.getElementById("mainBody");
-
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("light-theme");
-  localStorage.setItem("theme", body.classList.contains("light-theme") ? "light" : "dark");
-});
-
-// Load saved theme on reload
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    body.classList.add("light-theme");
-  }
 });
 
 
