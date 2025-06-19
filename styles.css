@@ -100,7 +100,6 @@ body {
   left: 0;
 }
 
-
 /* 🚀 Hero Section */
 .hero-section {
   height: 100vh;
@@ -368,6 +367,7 @@ body.light-theme {
 
 body.light-theme .navbar {
   background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* optional */
 }
 
 body.light-theme .brand,
@@ -396,41 +396,3 @@ body.light-theme footer {
   background: #f0f0f0;
   color: #111;
 }
-/* 🌞 Light Theme Overrides */
-body.light-theme {
-  background: #ffffff;
-  color: #111111;
-}
-
-body.light-theme .navbar {
-  background: #ffffff;
-}
-
-body.light-theme .brand,
-body.light-theme .hero-content h1 {
-  background: linear-gradient(90deg, #1e3c72, #2a5298);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-body.light-theme .card,
-body.light-theme .carousel-item {
-  background: #f5f5f5;
-  color: #111;
-}
-
-body.light-theme .carousel-item.active,
-body.light-theme .cta,
-body.light-theme .cta-final {
-  background: #2a5298;
-  color: #fff;
-}
-
-body.light-theme .testimonials,
-body.light-theme .cta-final,
-body.light-theme footer {
-  background: #f0f0f0;
-  color: #111;
-}
-
-
