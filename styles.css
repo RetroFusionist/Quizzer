@@ -194,3 +194,75 @@ footer {
   50% { transform: scale(1.1); opacity: 1; }
   100% { transform: scale(1); opacity: 0.9; }
 }
+/* 🌗 Theme Toggle Button */
+.theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* 🌞 Light Theme Styles */
+body.light-theme {
+  background: #ffffff;
+  color: #111111;
+}
+
+body.light-theme .navbar {
+  background: #f4f4f4;
+}
+
+body.light-theme .brand {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .hero-content h1 {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .card {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card:hover {
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .carousel-item {
+  background: #eeeeee;
+  color: #000;
+}
+
+body.light-theme .carousel-item.active {
+  background: #2575fc;
+  color: white;
+}
+
+body.light-theme .cta,
+body.light-theme .cta-final {
+  background: #2575fc;
+}
+
+body.light-theme .testimonials,
+body.light-theme .cta-final,
+body.light-theme footer {
+  background: #f9f9f9;
+  color: #111;
+}
+
+body.light-theme .background-svg {
+  opacity: 0.1;
+}
+
