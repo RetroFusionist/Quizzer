@@ -12,8 +12,8 @@ window.addEventListener("load", () => {
   if (spinner) spinner.style.display = "none";
 });
 
-// 🌌 Shrink Images on Scroll
-const shrinkImgs = document.querySelectorAll(".interactive-image");
+// 🌌 Shrink Parallax Image
+const shrinkImgs = document.querySelectorAll(".parallax-img");
 window.addEventListener("scroll", () => {
   const scrollPos = window.scrollY;
   shrinkImgs.forEach(img => {
@@ -22,12 +22,12 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 🌀 Parallax Scroll (on parallax-img)
+// 🌀 Parallax Scroll
 window.addEventListener("scroll", () => {
   const offset = window.scrollY;
   const parallaxImg = document.querySelector(".parallax-img");
   if (parallaxImg) {
-    parallaxImg.style.transform = `translateY(${offset * 0.3}px)`;
+    parallaxImg.style.transform += ` translateY(${offset * 0.3}px)`;
   }
 });
 
@@ -54,30 +54,6 @@ ScrollTrigger.scrollerProxy(scrollContainer, {
 
 ScrollTrigger.addEventListener("refresh", () => scroll.update());
 ScrollTrigger.refresh();
-
-// 🎠 Carousel Logic
-const items = document.querySelectorAll('.carousel-item');
-let current = 0;
-setInterval(() => {
-  items[current].classList.remove('active');
-  current = (current + 1) % items.length;
-  items[current].classList.add('active');
-}, 3000);
-
-// 🎬 GSAP Entry Animations for carousel
-items.forEach((el, i) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      scroller: scrollContainer,
-      start: 'top 80%',
-    },
-    opacity: 0,
-    y: 50,
-    duration: 0.6,
-    delay: i * 0.2
-  });
-});
 
 // 🔊 Hover Sounds
 const hoverSound = document.getElementById("hover-sound");
@@ -110,7 +86,7 @@ if (hoverSound && cardHoverSound) {
   });
 }
 
-// 🌓 Theme Toggle Logic
+// 🌓 Theme Toggle
 const toggleBtn = document.getElementById("themeToggle");
 const body = document.getElementById("mainBody");
 
@@ -119,7 +95,6 @@ toggleBtn.addEventListener("click", () => {
   localStorage.setItem("theme", body.classList.contains("light-theme") ? "light" : "dark");
 });
 
-// 🎨 Load Saved Theme
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "light") {
@@ -149,13 +124,3 @@ document.querySelectorAll('.stat h3').forEach(el => {
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
