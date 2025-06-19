@@ -4,50 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quizify - Elevate Your Mind</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 </head>
 <body id="mainBody" data-scroll-container>
 
+  <!-- 🔄 Loading Spinner -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- 🟣 Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
   <!-- 🔝 Navbar -->
   <header class="navbar">
     <img class="animated-icon" src="assets/images/animated-icon.gif" alt="Quizify Logo" />
     <span class="brand">Quizify</span>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#features">Features</a>
-      <a href="#stats">Stats</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <button id="themeToggle" class="theme-toggle">🌓</button>
   </header>
 
+  <!-- 🌊 Background Wave -->
   <img class="background-svg" src="assets/images/background.svg" alt="Background SVG" />
 
-  <!-- 🎬 Hero Section -->
-  <section id="home" class="hero-section" data-scroll-section>
+  <!-- 🚀 Hero Section -->
+  <div class="hero-section" data-scroll-section>
     <video class="background-video" autoplay muted loop>
-      <source src="assets/videos/hero.mp4" type="video/mp4">
+      <source src="assets/videos/bg-video.mp4" type="video/mp4" />
     </video>
-    <div class="hero-content ripple">
+    <div class="hero-content">
       <h1 data-scroll data-scroll-speed="2">Quizify</h1>
       <p data-scroll data-scroll-speed="1">Power Up Learning with Play</p>
       <button class="cta">Start Now</button>
     </div>
-  </section>
+    <div class="ripple-bg"></div>
+  </div>
 
-  <!-- 🖼️ Interactive Image Section -->
+  <!-- 🎯 Interactive Image Section -->
   <section class="interactive-images" data-scroll-section>
-    <img src="assets/images/image1.png" class="scroll-shrink" alt="Scroll Image 1"/>
-    <div class="parallax-text">Engage. Compete. Learn.</div>
-    <img src="assets/images/image2.png" class="scroll-shrink" alt="Scroll Image 2"/>
+    <div class="parallax-container">
+      <img src="assets/images/hover-img1.png" class="parallax-img" />
+      <img src="assets/images/hover-img2.png" class="parallax-img" />
+    </div>
   </section>
 
-  <!-- ✨ Features -->
-  <section id="features" class="features" data-scroll-section>
+  <!-- ⚡ Features Section -->
+  <section class="features" data-scroll-section>
     <h2 data-scroll>Our Core Features</h2>
     <div class="feature-cards">
       <div class="card" data-scroll data-scroll-speed="1.5">⚡ Gamified Quizzes</div>
@@ -57,40 +62,22 @@
     </div>
   </section>
 
-  <!-- 📽️ Stats Section with Background Video -->
-  <section id="stats" class="stats-section" data-scroll-section>
-    <video autoplay muted loop class="stats-bg-video">
-      <source src="assets/videos/bg2.mp4" type="video/mp4">
+  <!-- 📊 Stats Section -->
+  <section class="stats-section ripple" data-scroll-section>
+    <video class="stats-bg-video" autoplay muted loop>
+      <source src="assets/videos/bg2.mp4" type="video/mp4" />
     </video>
     <div class="stats-overlay">
-      <h2>Numbers Speak</h2>
+      <h2>Quizify in Numbers</h2>
       <div class="stats">
-        <div class="stat"><h3>5000</h3><p>Users</p></div>
-        <div class="stat"><h3>150</h3><p>Teams</p></div>
-        <div class="stat"><h3>95</h3><p>% Engagement</p></div>
+        <div class="stat"><h3>0</h3><p>Quizzes Played</p></div>
+        <div class="stat"><h3>0</h3><p>Teams Registered</p></div>
+        <div class="stat"><h3>0</h3><p>Live Battles</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 🔄 Carousel -->
-  <section class="carousel-section" data-scroll-section>
-    <h2>Quiz Experiences</h2>
-    <div class="carousel">
-      <div class="carousel-item active">Live Competitions</div>
-      <div class="carousel-item">Training Simulators</div>
-      <div class="carousel-item">Hackathons</div>
-    </div>
-  </section>
-
-  <!-- 🎞️ Showcase -->
-  <section class="showcase" data-scroll-section>
-    <h2>Showcase</h2>
-    <video autoplay muted loop>
-      <source src="assets/videos/showcase.mp4" type="video/mp4">
-    </video>
-  </section>
-
-  <!-- 🗣️ Testimonials -->
+  <!-- 💬 Testimonials -->
   <section class="testimonials" data-scroll-section>
     <h2>Trusted by Teams</h2>
     <div class="testimonial">
@@ -99,20 +86,22 @@
     </div>
   </section>
 
-  <!-- 📣 Final CTA -->
-  <section class="cta-final" data-scroll-section id="contact">
+  <!-- 🚀 Final CTA -->
+  <section class="cta-final" data-scroll-section>
     <h2 data-scroll data-scroll-speed="1">Ready to Elevate Learning?</h2>
     <button class="cta">Get Started</button>
   </section>
 
-  <!-- 🔊 Sound Effects -->
-  <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
-  <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
-
+  <!-- 📞 Footer -->
   <footer data-scroll-section>
     <p>&copy; 2025 Quizify Inc. All rights reserved.</p>
   </footer>
 
+  <!-- 🔊 Sounds -->
+  <audio id="hover-sound" src="assets/sounds/hover.mp3" preload="auto"></audio>
+  <audio id="card-hover-sound" src="assets/sounds/card-hover.mp3" preload="auto"></audio>
+
+  <!-- 🧠 Script -->
   <script src="script.js"></script>
 </body>
 </html>
